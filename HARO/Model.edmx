@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HaroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BilderAnzeigen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnzeigeId" Type="int" Nullable="false" />
+          <Property Name="url" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Gebrauchte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hersteller" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kategorie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Antrieb" Type="nvarchar" MaxLength="50" />
+          <Property Name="Baujahr" Type="int" />
+          <Property Name="Betriebsstunden" Type="int" />
+          <Property Name="Bauhoehe" Type="int" />
+          <Property Name="Tragkraft" Type="int" />
+          <Property Name="Leergewicht" Type="int" />
+          <Property Name="LBH" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mast" Type="nvarchar" MaxLength="50" />
+          <Property Name="AnzahlVentile" Type="int" />
+          <Property Name="MaxHubhoehe" Type="int" />
+          <Property Name="Preis" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Besonderheiten" Type="nvarchar(max)" />
+          <Property Name="Beschreibung" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kontaktanfragen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firma" Type="nvarchar" MaxLength="50" />
+          <Property Name="Anpartner" Type="nvarchar" MaxLength="50" />
+          <Property Name="MailTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Thema" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="passwort" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="HaroModelStoreContainer">
+          <EntitySet Name="BilderAnzeigen" EntityType="Self.BilderAnzeigen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gebrauchte" EntityType="Self.Gebrauchte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kontaktanfragen" EntityType="Self.Kontaktanfragen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HaroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BilderAnzeigen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnzeigeId" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Gebrauchte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hersteller" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kategorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Antrieb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Baujahr" Type="Int32" />
+          <Property Name="Betriebsstunden" Type="Int32" />
+          <Property Name="Bauhoehe" Type="Int32" />
+          <Property Name="Tragkraft" Type="Int32" />
+          <Property Name="Leergewicht" Type="Int32" />
+          <Property Name="LBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mast" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AnzahlVentile" Type="Int32" />
+          <Property Name="MaxHubhoehe" Type="Int32" />
+          <Property Name="Preis" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Besonderheiten" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="HaroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BilderAnzeigen" EntityType="Self.BilderAnzeigen" />
+          <EntitySet Name="Gebrauchte" EntityType="Self.Gebrauchte" />
+          <EntitySet Name="User" EntityType="HaroModel.User" />
+          <EntitySet Name="Kontaktanfragen" EntityType="HaroModel.Kontaktanfragen" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passwort" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kontaktanfragen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Anpartner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MailTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Thema" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HaroModelStoreContainer" CdmEntityContainer="HaroEntities">
+          <EntitySetMapping Name="BilderAnzeigen">
+            <EntityTypeMapping TypeName="HaroModel.BilderAnzeigen">
+              <MappingFragment StoreEntitySet="BilderAnzeigen">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AnzeigeId" ColumnName="AnzeigeId" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gebrauchte">
+            <EntityTypeMapping TypeName="HaroModel.Gebrauchte">
+              <MappingFragment StoreEntitySet="Gebrauchte">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Hersteller" ColumnName="Hersteller" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Kategorie" ColumnName="Kategorie" />
+                <ScalarProperty Name="Antrieb" ColumnName="Antrieb" />
+                <ScalarProperty Name="Baujahr" ColumnName="Baujahr" />
+                <ScalarProperty Name="Betriebsstunden" ColumnName="Betriebsstunden" />
+                <ScalarProperty Name="Bauhoehe" ColumnName="Bauhoehe" />
+                <ScalarProperty Name="Tragkraft" ColumnName="Tragkraft" />
+                <ScalarProperty Name="Leergewicht" ColumnName="Leergewicht" />
+                <ScalarProperty Name="LBH" ColumnName="LBH" />
+                <ScalarProperty Name="Mast" ColumnName="Mast" />
+                <ScalarProperty Name="AnzahlVentile" ColumnName="AnzahlVentile" />
+                <ScalarProperty Name="MaxHubhoehe" ColumnName="MaxHubhoehe" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="Besonderheiten" ColumnName="Besonderheiten" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="HaroModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="passwort" ColumnName="passwort" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kontaktanfragen">
+            <EntityTypeMapping TypeName="HaroModel.Kontaktanfragen">
+              <MappingFragment StoreEntitySet="Kontaktanfragen">
+                <ScalarProperty Name="Thema" ColumnName="Thema" />
+                <ScalarProperty Name="MailTel" ColumnName="MailTel" />
+                <ScalarProperty Name="Anpartner" ColumnName="Anpartner" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

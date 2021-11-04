@@ -1,0 +1,29 @@
+﻿@using HARO.Models
+@model HARO.Models.AdminKontakteModel
+@{
+    ViewBag.Title = "Administration";
+}
+
+<h2><a href="/Admin/Index/">Kontakte</a></h2>
+<table border="0" width="100%">
+    <tr>
+        <td width="10%"><b>Firma</b></td>
+        <td width="10%"><b>Ansprechpartner</b></td>
+        <td width="20%"><b>Kontaktdaten</b></td>
+        <td width="50%"><b>Anliegen</b></td>
+        <td width="10%"></td>
+    </tr>
+    @{
+        foreach (Kontaktanfragen anfrage in Model.Kontakte)
+        {
+        <tr>
+            <td valign="top">@anfrage.Firma</td>
+            <td valign="top">@anfrage.Anpartner</td>
+            <td valign="top">@anfrage.MailTel</td>
+            <td valign="top">@anfrage.Thema</td>
+            <td><a href="/Admin/KontaktAnfrageLoeschen/?id=@anfrage.id">löschen</a></td>
+        </tr>
+        }
+        
+    }
+</table>

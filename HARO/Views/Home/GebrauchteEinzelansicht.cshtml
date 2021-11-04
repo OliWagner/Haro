@@ -1,0 +1,86 @@
+﻿@using HARO.Models
+@model HARO.Models.GebrauchteEinzelnModel
+
+<link rel="stylesheet" href="~/Content/slider.css">
+
+<div class="jumbotron">
+    <table border="0" width="100%">
+        <tr>
+            <td colspan="3" align="right"><a href="/Home/Gebrauchte/" class="linkSecondLevel">Gebrauchtgeräte</a><a href="/Home/Zubehoer/" class="linkSecondLevel">Zubehör</a></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <h2 class="headlineStart">@Model.Geraet.Hersteller - @Model.Geraet.Bezeichnung</h2><br/>
+                <p align="right">@Model.Geraet.Preis &euro;</p> 
+            </td>
+        </tr>
+        <tr>
+            <td width="25%" class="leftColumnEinzelGeraet" valign="top">
+                <b>Baujahr:</b> @Model.Geraet.Baujahr<br />
+                <b>Betriebsstunden:</b> @Model.Geraet.Betriebsstunden<br />
+                <b>Antrieb:</b> @Model.Geraet.Antrieb<br />
+                <b>Tragkraft:</b> @Model.Geraet.Tragkraft<br />
+                <b>Leergewicht:</b> @Model.Geraet.Leergewicht<br />
+                <b>Bauhöhe:</b> @Model.Geraet.Bauhoehe<br />
+                <b>maximale Hubhöhe:</b> @Model.Geraet.MaxHubhoehe<br />
+                <b>Mast:</b> @Model.Geraet.Mast<br />
+                <br />
+                <b>Beschreibung:</b><br/>
+                @Model.Geraet.Beschreibung
+            </td>
+            <td colspan="2" width="75%">
+                <!-- Slider -->
+                <div class="slideshow-container-einzel">
+
+                    @foreach (BilderAnzeigen item in Model.Bilder)
+                    {
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides" style="margin:10px;">
+                            <div class="numbertext"></div>
+                            <img src="~/UploadedFiles/@item.url" style="width:100%">
+                            <div class="text">@item.Text</div>
+                        </div>
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    }
+                    
+                </div>
+                <br/>
+                <p>@Model.Geraet.Besonderheiten</p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+    }
+</script>

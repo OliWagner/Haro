@@ -1,0 +1,147 @@
+﻿@using HARO.Models
+@model HARO.Models.KontakteModel
+@{
+    ViewBag.Title = "Kontakt";
+}
+
+<div class="jumbotron">
+    <table border="0" width="100%">
+        <tr>
+            <td colspan="3">
+                <h2 class="headlineStart">Kontakt</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" width="66%" valign="top" style="padding-right:20px;">
+                <b>Schön, dass Sie sich für unsere Arbeit interessieren.</b><br /><br />
+                Die im Rahmen der Webseite erhobenen personenbezogenen Daten werden zum Zweck der Bearbeitung Ihrer konkreten Anfrage genutzt.
+                <br /><br />
+                Eine Verarbeitung und Nutzung Ihrer Daten für Zwecke der Beratung und der Werbung erfolgt nicht. Die Daten werden nicht an Dritte weitergegeben.
+            </td>
+            <td width="34%" valign="top" style="padding-left:20px;">
+                <img src="~/Content/Images/touchmail.jpg" width="100%" />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td colspan="3" valign="top">
+
+
+                
+                    <table border="0" width="100%">
+                        <tr>
+                            <td width="40%" valign="top">
+                                <p>
+                                    <b>Büro</b><br />
+                                    <small>
+                                        Nikolaus-A.-Otto Straße 16<br />
+                                        53919 Weilerswist
+                                    </small>
+                                </p>
+
+                                <p>&nbsp;</p>
+
+                                <p>
+                                    <b>Bürozeiten</b><br />
+                                    <small>Mo-Fr: 08.00h - 17.00h</small>
+                                </p>
+
+                                <p>&nbsp;</p>
+
+                                <p>
+                                    <b>Telefon</b><br />
+                                    <small>
+                                        +49 (0) 22 54 - 60 12 94<br />
+                                        +49 (0) 221 422 90 132
+                                    </small>
+                                </p>
+                                <p>&nbsp;</p>
+                                <p>
+                                    <b>E-m@il</b><br />
+                                    <small>info@haro-stapler.de </small>
+                                </p>
+                            </td>
+                            <td width="60%" valign="top">
+                                @{
+                                    if (Model.Bestaetigung.Equals(""))
+                                    {
+                                        <form method="post" action="KontaktEintragen">
+                                            <p>
+                                                <b>Firma:</b><br />
+                                                <input type="text" class="inputKontakt" id="firma" name="firma" onchange="formChanged()" />
+                                            </p>
+
+                                            <p>
+                                                <b>Ansprechpartner:</b><br />
+                                                <input type="text" class="inputKontakt" id="anpartner" name="anpartner" onchange="formChanged()" />
+                                            </p>
+
+                                            <p>
+                                                <b>E-Mail-Adresse oder Telefonnummer:</b><br />
+                                                <small><small>Je nachdem, wie Sie kontaktiert werden möchten...</small></small><br />
+                                                <input type="text" class="inputKontakt" id="mailTel" name="mailTel" onchange="formChanged()" />
+                                            </p>
+
+                                            <p>
+                                                <b>Es geht um:</b><br />
+                                                <textarea type="text" class="inputKontakt taKontakt" id="thema" name="thema" onchange="formChanged()"></textarea>
+                                            </p>
+
+                                            <p id="paragraphTextSubmit">
+                                                <small>
+                                                    <small>
+                                                        Bitte füllen Sie das Formular aus, damit wir Sie kontaktieren können.
+                                                    </small>
+                                                </small>
+                                            </p>
+
+                                            <p id="paragraphBtnSubmit" style="visibility:hidden">
+                                                <input type="submit" id="btnSubmitKontakt" class="btnSubmitKontakt" value="Absenden" />
+                                            </p>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <br/>
+                                        <big><b>@Model.Bestaetigung.ToString()</b></big>
+                                    }
+                                }
+
+
+                            </td>
+                            </tr>
+                        </table>
+                    
+
+                
+
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<script>
+    function formChanged() {
+        var txtFirma = document.getElementById("firma").value;
+        var txtAnpartner = document.getElementById("anpartner").value;
+        var txtMailTel = document.getElementById("mailTel").value;
+        var txtThema = document.getElementById("thema").value;
+
+        if (txtFirma.length > 3 && txtAnpartner.length > 3 && txtMailTel.length > 3 && txtThema.length > 3) {
+            document.getElementById("paragraphTextSubmit").style.visibility = "hidden";
+            document.getElementById("paragraphBtnSubmit").style.visibility = "visible";
+        } else {
+            document.getElementById("paragraphTextSubmit").style.visibility = "visible";
+            document.getElementById("paragraphBtnSubmit").style.visibility = "hidden";
+        }
+
+    }
+</script>

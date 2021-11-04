@@ -1,0 +1,21 @@
+﻿@using HARO.Models
+@model HARO.Models.UploadModel
+
+
+<h2><a href="/Admin/Index/?id=@Model.Id">Upload</a></h2>
+@using (Html.BeginForm("UploadFile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+       <input type="hidden" name="id" id="id" value="@Model.Id"/>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload" />
+        <br /><br />
+        @{ 
+            foreach (BilderAnzeigen bild in Model.BilderGeraet)
+            {
+                <a href="/Admin/BildLoeschen/?bildId=@bild.id&geraeteId=@Model.Id"><img src="~/UploadedFiles/@bild.url" width="100"/></a><br/><br/>
+            }
+        }
+    </div>
+}
+
