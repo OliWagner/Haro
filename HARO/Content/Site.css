@@ -17,6 +17,13 @@
     white-space: normal;
 }
 
+.newsbox p {
+    padding:15px;
+    background-color:antiquewhite;
+    margin-left:20px;
+    font-size:0.75em;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -32,9 +39,17 @@ textarea {
     color: #ffd800;
 }
 
-.leftColumnEinzelGeraet {
-    font-size: 0.9em;
+.txtInputNews {
+    min-width:500px;
 }
+
+.txtAreaInputNews {
+    min-height:200px;
+}
+
+    .leftColumnEinzelGeraet {
+        font-size: 0.9em;
+    }
 
 .btnSubmitKontakt {
     margin-top: 0px;

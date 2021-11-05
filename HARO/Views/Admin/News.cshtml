@@ -1,0 +1,62 @@
+﻿@using HARO.Models
+@model HARO.Models.AdminNewsModel
+@{
+    ViewBag.Title = "Administration";
+}
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+<h2><a href="/Admin/Index/">News</a></h2>
+<form method="post" action="/Admin/NewsEintragen/">
+    <input type="hidden" name="id" id="id" value="@Model.AnzeigeNews.id"/>
+    <table border="0" width="100%">
+        <tr>
+            <td width="20%" valign="top">Überschrift:</td>
+            <td width="80%" valign="top"><input type="text" class="txtInputNews" id="header" name="header" value="@Model.AnzeigeNews.Header" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td width="20%" valign="top">Subüberschrift:</td>
+            <td width="80%" valign="top"><input type="text" class="txtInputNews" id="subheader" name="subheader" value="@Model.AnzeigeNews.Subheader" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td width="20%" valign="top">Inhalt:</td>
+            <td width="80%" valign="top"><textarea name="HtmlQuelltext" id="HtmlQuelltext" class="txtInputNews txtAreaInputNews">@Model.AnzeigeNews.Newstext</textarea></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Eintragen" /></td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    CKEDITOR.replace('HtmlQuelltext');
+</script>
+@{ 
+<table border="0" width="100%">
+    <tr>
+        <td colspan="3"><hr /></td>
+    </tr>
+    @foreach (News item in Model.AlleNews)
+    {
+        <tr>
+            <td width="20%"><a href="/Admin/News/?id=@item.id">@item.Datum</a></td>
+            <td width="60%">@item.Header</td>
+            <td width="20%"><a href="/Admin/NewsLoeschen/?id=@item.id">löschen</a></td>
+        </tr>
+        <tr>
+            <td colspan="3"><hr /></td>
+        </tr>
+    }
+</table>
+}

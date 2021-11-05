@@ -4,7 +4,7 @@
     ViewBag.Title = "Administration";
 }
 
-<h2><a href="/Admin/Kontakte/">Administration</a></h2>
+<h2>Administration <a href="/Admin/Kontakte/">Kontakte</a> <a href="/Admin/News/">News</a></h2>
 Geben Sie neue Geräte ein, ändern Sie Einträge oder löschen Sie diese.
 <form method="post" action="/Admin/AnzeigeEintragen">
     @Html.HiddenFor(m => m.AkutesGeraet.id)

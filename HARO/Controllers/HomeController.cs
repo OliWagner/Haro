@@ -65,6 +65,18 @@ namespace HARO.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult News(int? id)
+        {
+            NewsModel model;
+            if (id == null) {
+                model = new NewsModel();
+            } else {
+                model = new NewsModel((int)id);
+            }
+            return View(model);
+        }
+
         public ActionResult Marken()
         {
             return View();

@@ -46,6 +46,16 @@
           <Property Name="MailTel" Type="nvarchar" MaxLength="50" />
           <Property Name="Thema" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Datum" Type="datetime" Nullable="false" />
+          <Property Name="Header" Type="varchar" MaxLength="250" />
+          <Property Name="Subheader" Type="varchar(max)" />
+          <Property Name="Newstext" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
@@ -58,6 +68,7 @@
           <EntitySet Name="BilderAnzeigen" EntityType="Self.BilderAnzeigen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gebrauchte" EntityType="Self.Gebrauchte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kontaktanfragen" EntityType="Self.Kontaktanfragen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -100,6 +111,7 @@
           <EntitySet Name="Gebrauchte" EntityType="Self.Gebrauchte" />
           <EntitySet Name="User" EntityType="HaroModel.User" />
           <EntitySet Name="Kontaktanfragen" EntityType="HaroModel.Kontaktanfragen" />
+          <EntitySet Name="News" EntityType="HaroModel.News" />
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -118,6 +130,16 @@
           <Property Name="Anpartner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MailTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Thema" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Header" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Subheader" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Newstext" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -174,6 +196,17 @@
                 <ScalarProperty Name="MailTel" ColumnName="MailTel" />
                 <ScalarProperty Name="Anpartner" ColumnName="Anpartner" />
                 <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="HaroModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Newstext" ColumnName="Newstext" />
+                <ScalarProperty Name="Subheader" ColumnName="Subheader" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

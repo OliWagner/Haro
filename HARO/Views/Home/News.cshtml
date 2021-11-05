@@ -1,0 +1,54 @@
+﻿@using HARO.Models
+@model HARO.Models.NewsModel
+@{
+    ViewBag.Title = "News";
+}
+
+<div class="jumbotron">
+    <table border="0" width="100%">
+        <tr>
+            <td colspan="3">
+                <h2 class="headlineStart">Aktuelle Neuigkeiten</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <table border="0" width="100%">
+                    <tr>
+                        <td width="40%" valign="top" style="padding-right:15px;"><h2><b>@Model.AnzeigeNews.Header</b></h2></td>
+                        <td width="60%" valign="top" rowspan="2" class="newsbox">
+                            Lesen Sie auch:<br />
+                            @{int  counter = 0;}
+                            @foreach (News item in Model.AlleNews)
+                            {
+                                <p><a href="/Home/News/?id=@item.id">@item.Datum.ToShortDateString() @item.Datum.ToShortTimeString()</a> - @item.Header</p>
+                                counter++;
+                                if (counter == 4) {
+                                    break;
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%" valign="top" style="padding-right:15px;"><b>@Model.AnzeigeNews.Subheader</b></td>
+                        <td width="60%" valign="top"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">@Html.Raw(Model.AnzeigeNews.Newstext)</td>
+        </tr>
+    </table>
+
+</div>

@@ -29,5 +29,6 @@ namespace HARO
         public virtual DbSet<Gebrauchte> Gebrauchte { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Kontaktanfragen> Kontaktanfragen { get; set; }
+        public virtual DbSet<News> News { get; set; }
     }
 }

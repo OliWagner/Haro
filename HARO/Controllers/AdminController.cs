@@ -141,6 +141,61 @@ namespace HARO.Controllers
         }
 
         [HttpGet]
+        public ActionResult News(int? id)
+        {
+            if (Session["User"] == null || Session["User"].Equals(""))
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                if (id == null) {
+                    AdminNewsModel model = new AdminNewsModel();
+                    return View(model);
+                } else {
+                    AdminNewsModel model = new AdminNewsModel((int)id);
+                    return View(model);
+                }
+            }
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult NewsEintragen()
+        {
+            if (Session["User"] == null || Session["User"].Equals(""))
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (HaroEntities db = new HaroEntities()) {
+                   string _id = Request["id"];
+                    if (_id.Equals("0"))
+                    {
+                        News news = new News();
+                        news.Header = Request["header"];
+                        news.Subheader = Request["subheader"];
+                        news.Newstext = Request["HtmlQuelltext"];
+                        news.Datum = DateTime.Now;
+                        db.News.Add(news);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        int myId = Int32.Parse(_id);
+                        News news = db.News.Where(x => x.id == myId).FirstOrDefault();
+                        news.Header = Request["header"];
+                        news.Subheader = Request["subheader"];
+                        news.Newstext = Request["HtmlQuelltext"];
+                        db.SaveChanges();
+                    }
+                }
+                return RedirectToAction("News");
+            }
+        }
+
+        [HttpGet]
         public ActionResult KontaktAnfrageLoeschen(int id)
         {
             if (Session["User"] == null || Session["User"].Equals(""))
