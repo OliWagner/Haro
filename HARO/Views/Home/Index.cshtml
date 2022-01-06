@@ -16,7 +16,7 @@
 
                     Dann sind Sie bei uns richtig. Denn an unserem Unternehmensstandort in der Nähe von Köln können Sie nicht nur Stapler mieten – wir kaufen und verkaufen, beraten Sie in Finanzierungsangelegenheit und kümmern uns auch um Reparatur und Service.<br /><br />
                     <b>Wir reparieren und warten alle Marken!</b><br /><br />
-                    In der Summe verfügen unsere Mitarbeiter über mehr als 50 Jahre Erfahrung in der Wartung und Reparatur von Gabelstaplern und artverwandten Förderzeugen.
+                    Ob Linde, Still, Yale, Hyster, Jungheinrich oder HC. In der Summe verfügen unsere Mitarbeiter über mehr als 50 Jahre Erfahrung in der Wartung und Reparatur von Gabelstaplern und artverwandten Förderzeugen.
 
                 </div>
             </td>
@@ -119,11 +119,18 @@
 
     var coll = document.getElementsByClassName("collapsible");
     var i;
+    var aktuell;
 
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
-
+            hideAll();
             this.classList.toggle("active");
+
+            if (aktuell != null) {
+                aktuell.classList.toggle("active");
+            }
+            aktuell = this;
+
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
@@ -131,5 +138,13 @@
                 content.style.display = "block";
             }
         });
+    }
+
+    function hideAll() {
+        var coll = document.getElementsByClassName("content");
+        
+        for (i = 0; i < coll.length; i++) {
+            coll[i].style.display = "none";
+        }
     }
 </script>

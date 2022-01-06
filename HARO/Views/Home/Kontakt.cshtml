@@ -19,8 +19,10 @@
             <td colspan="2" width="66%" valign="top" style="padding-right:20px;">
                 <b>Schön, dass Sie sich für unsere Arbeit interessieren.</b><br /><br />
                 Die im Rahmen der Webseite erhobenen personenbezogenen Daten werden zum Zweck der Bearbeitung Ihrer konkreten Anfrage genutzt.
-                <br /><br />
+                <br />
                 Eine Verarbeitung und Nutzung Ihrer Daten für Zwecke der Beratung und der Werbung erfolgt nicht. Die Daten werden nicht an Dritte weitergegeben.
+                <br /><br />
+                Hinterlassen Sie nur so viel Daten wie wir brauchen, um Sie kontaktieren zu können. Der Button zum Absenden wir eingeblendet, wenn das letzte ausgefüllte Feld verlassen wird.
             </td>
             <td width="34%" valign="top" style="padding-left:20px;">
                 <img src="~/Content/Images/touchmail.jpg" width="100%" />
@@ -73,7 +75,7 @@
                                 @{
                                     if (Model.Bestaetigung.Equals(""))
                                     {
-                                        <form method="post" action="KontaktEintragen">
+                                        <form method="post" action="/Home/KontaktEintragen">
                                             <p>
                                                 <b>Firma:</b><br />
                                                 <input type="text" class="inputKontakt" id="firma" name="firma" onchange="formChanged()" />
@@ -85,7 +87,7 @@
                                             </p>
 
                                             <p>
-                                                <b>E-Mail-Adresse oder Telefonnummer:</b><br />
+                                                <b>E-Mail-Adresse und/oder Telefonnummer:</b><br />
                                                 <small><small>Je nachdem, wie Sie kontaktiert werden möchten...</small></small><br />
                                                 <input type="text" class="inputKontakt" id="mailTel" name="mailTel" onchange="formChanged()" />
                                             </p>

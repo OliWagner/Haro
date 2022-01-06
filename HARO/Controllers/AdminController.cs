@@ -159,6 +159,25 @@ namespace HARO.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult Newsloeschen(int id)
+        {
+            if (Session["User"] == null || Session["User"].Equals(""))
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (HaroEntities db = new HaroEntities()) {
+                    News newsToDelete = db.News.Where(x => x.id == id).FirstOrDefault();
+                    db.News.Remove(newsToDelete);
+                    db.SaveChanges();
+                }
+                return RedirectToAction("/News");
+                
+            }
+        }
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult NewsEintragen()

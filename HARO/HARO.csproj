@@ -175,10 +175,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\363_323_323_50_bg.jpg" />
+    <Content Include="Content\Images\behaelter.jpg" />
+    <Content Include="Content\Images\Drehgeraete.jpg" />
     <Content Include="Content\Images\haro-stapler.png" />
     <Content Include="Content\Images\HysterLogoSchwarzRand.png" />
     <Content Include="Content\Images\impressum.jpg" />
+    <Content Include="Content\Images\Kartonklammern.jpg" />
+    <Content Include="Content\Images\Klammergeraete.jpg" />
     <Content Include="Content\Images\koelnskylineopacity.png" />
+    <Content Include="Content\Images\Mehrfachseitenschieber.jpg" />
+    <Content Include="Content\Images\schrott.jpg" />
     <Content Include="Content\Images\Service.png" />
     <Content Include="Content\Images\Stapler.png" />
     <Content Include="Content\Images\Team.png" />
@@ -523,6 +529,14 @@
     <Content Include="Views\Home\GebrauchteEinzelansicht.cshtml" />
     <Content Include="Views\Admin\News.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Gebraucht.cshtml" />
+    <Content Include="Views\Home\Leihgeraete.cshtml" />
+    <Content Include="Views\Home\Still.cshtml" />
+    <Content Include="Views\Home\Yale.cshtml" />
+    <Content Include="Views\Home\Jungheinrich.cshtml" />
+    <Content Include="Views\Home\Linde.cshtml" />
+    <Content Include="Views\Home\HC.cshtml" />
+    <Content Include="Views\Home\Toyota.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

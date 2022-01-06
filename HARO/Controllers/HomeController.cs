@@ -28,6 +28,36 @@ namespace HARO.Controllers
             return View();
         }
 
+        public ActionResult Yale()
+        {
+            return View();
+        }
+
+        public ActionResult Still()
+        {
+            return View();
+        }
+
+        public ActionResult Jungheinrich()
+        {
+            return View();
+        }
+
+        public ActionResult Toyota()
+        {
+            return View();
+        }
+
+        public ActionResult HC()
+        {
+            return View();
+        }
+
+        public ActionResult Linde()
+        {
+            return View();
+        }
+
         public ActionResult Wir()
         {
             return View();
@@ -37,6 +67,11 @@ namespace HARO.Controllers
         {
             GebrauchteModel model = new GebrauchteModel();
             return View(model);
+        }
+
+        public ActionResult Gebraucht()
+        {
+            return View();
         }
 
         public ActionResult GebrauchteEinzelansicht(int id)
@@ -56,6 +91,11 @@ namespace HARO.Controllers
         }
 
         public ActionResult Ersatzteile()
+        {
+            return View();
+        }
+
+        public ActionResult Leihgeraete()
         {
             return View();
         }

@@ -16,19 +16,18 @@
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
 
-                        <img src="~/Content/Images/haro-stapler.png" style="max-width:150px;" /><br />
+                        <img src="~/Content/Images/haro-stapler.png" style="max-width:250px;" /><br />
                         <big>
-                            <big>
+                            
                                 <b class="headlineStart mbetrieb">Meisterbetrieb</b>
-                            </big>
+                          
                         </big>
 
                     </td>
                     <td>
                         <center>
-                            @*<a href="http://www.hyster.com" target="_blank">*@
-                                <img src="~/Content/Images/HysterLogoSchwarzRand.png" border="0" />
-                            @*</a>*@
+                            @*<img src="~/Content/Images/HysterLogoSchwarzRand.png" border="0" />*@
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </center>
                     </td>
                     <td id="tdStartseiteKoelnBg" rowspan="2" class="headlineStart"><b>Vermietung, Service und Ersatzteile in Köln</b><br /><small>Wir bewegen was!</small></td>
@@ -39,7 +38,7 @@
                     <td>
                         <center>
                             <small class="headlineStart">
-                                Hyster-Vertragshändler
+                                @*Vertragshändler*@
                             </small>
                         </center>
                     </td>
@@ -64,11 +63,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Marken<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Hyster", "Hyster", "Home")</li>
-                            <li>@Html.ActionLink("andere Hersteller", "Service", "Home")</li>
+                            <li>@Html.ActionLink("Still", "Still", "Home")</li>
+                            <li>@Html.ActionLink("Jungheinrich", "Jungheinrich", "Home")</li>
+                            <li>@Html.ActionLink("Linde", "Linde", "Home")</li>
+                            <li>@Html.ActionLink("Yale", "Yale", "Home")</li>
+                            <li>@Html.ActionLink("Toyota", "Toyota", "Home")</li>
+                            <li>@Html.ActionLink("HC", "HC", "Home")</li>
+
                         </ul>
                     </li>
 
-                    <li>@Html.ActionLink("Gebrauchtgeräte", "Gebrauchte", "Home")</li>
+                    <li>@Html.ActionLink("Gebrauchtgeräte", "Gebraucht", "Home")</li>
+                    <li>@Html.ActionLink("Leihgeräte", "Leihgeraete", "Home")</li>
                     <li>@Html.ActionLink("Zubehör", "Zubehoer", "Home")</li>
                     <li>@Html.ActionLink("News", "News", "Home")</li>
                 </ul>
