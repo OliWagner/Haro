@@ -1,3 +1,17 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿
+
+@{
+    if (Request.Browser.IsMobileDevice || Request.Browser.ScreenPixelsWidth < 600)
+    {
+        Layout = "~/Views/Shared/_Layout_Mobile.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
+
+
+
+
+

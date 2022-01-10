@@ -183,6 +183,7 @@
     <Content Include="Content\Images\Kartonklammern.jpg" />
     <Content Include="Content\Images\Klammergeraete.jpg" />
     <Content Include="Content\Images\koelnskylineopacity.png" />
+    <Content Include="Content\Images\kontakttelmail.png" />
     <Content Include="Content\Images\Mehrfachseitenschieber.jpg" />
     <Content Include="Content\Images\schrott.jpg" />
     <Content Include="Content\Images\Service.png" />
@@ -537,6 +538,7 @@
     <Content Include="Views\Home\Linde.cshtml" />
     <Content Include="Views\Home\HC.cshtml" />
     <Content Include="Views\Home\Toyota.cshtml" />
+    <Content Include="Views\Shared\_Layout_Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

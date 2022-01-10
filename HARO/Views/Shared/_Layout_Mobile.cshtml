@@ -7,54 +7,28 @@
     <title>@ViewBag.Title - HARO Stapler</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-<script>
-    var meinI = 0;
-</script>
-
-
-
 </head>
 <body>
+    
     <div style="margin-top:0px;">
         <center>
-            <table border="0" width="1200">
+            <table border="0" width="350">
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
-
                         <img src="~/Content/Images/haro-stapler.png" style="max-width:250px;" /><br />
-
                         <big>
-
                             <b class="headlineStart mbetrieb">Meisterbetrieb</b>
-
                         </big>
-
                     </td>
                     <td>
-                        <center>
-                            @*<img src="~/Content/Images/HysterLogoSchwarzRand.png" border="0" />*@
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </center>
+                        &nbsp;
                     </td>
-                    <td id="tdStartseiteKoelnBg" rowspan="2" class="headlineStart"><b>Service, Ersatzteile und Vermietung in Köln</b><br /><small>Wir bewegen was!</small></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>
-                        <center>
-                            <small class="headlineStart">
-                                @*Vertragshändler*@
-                            </small>
-                        </center>
-                    </td>
+                    <td id="" rowspan="2" class="headlineStart"><b>Vermietung, Service und Ersatzteile in Köln</b></td>
                 </tr>
             </table>
         </center>
     </div>
-
-
     <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -68,24 +42,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Start", "Index", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Marken<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Hyster", "Hyster", "Home")</li>
-                            <li>@Html.ActionLink("Still", "Still", "Home")</li>
-                            <li>@Html.ActionLink("Jungheinrich", "Jungheinrich", "Home")</li>
-                            <li>@Html.ActionLink("Linde", "Linde", "Home")</li>
-                            <li>@Html.ActionLink("Yale", "Yale", "Home")</li>
-                            <li>@Html.ActionLink("Toyota", "Toyota", "Home")</li>
-                            <li>@Html.ActionLink("HANGCHA", "HC", "Home")</li>
-
-                        </ul>
-                    </li>
-
-                    <li>@Html.ActionLink("Gebrauchtgeräte", "Gebraucht", "Home")</li>
-                    <li>@Html.ActionLink("Mietgeräte", "Leihgeraete", "Home")</li>
-                    <li>@Html.ActionLink("Zubehör", "Zubehoer", "Home")</li>
-                    <li>@Html.ActionLink("News", "News", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>

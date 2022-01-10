@@ -70,6 +70,12 @@ textarea {
     border-radius:10px;
     min-width: 550px;
 }
+.inputKontaktMobil {
+    background-color: #ccc;
+    border: solid 1px #ffd800;
+    border-radius: 10px;
+    min-width: 250px;
+}
 
 .taKontakt {
     min-height:100px;

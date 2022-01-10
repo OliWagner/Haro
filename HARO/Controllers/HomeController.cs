@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -58,11 +61,6 @@ namespace HARO.Controllers
             return View();
         }
 
-        public ActionResult Wir()
-        {
-            return View();
-        }
-
         public ActionResult Gebrauchte()
         {
             GebrauchteModel model = new GebrauchteModel();
@@ -96,11 +94,6 @@ namespace HARO.Controllers
         }
 
         public ActionResult Leihgeraete()
-        {
-            return View();
-        }
-
-        public ActionResult Team()
         {
             return View();
         }
@@ -168,7 +161,35 @@ namespace HARO.Controllers
                 db.Kontaktanfragen.Add(anfrage);
                 db.SaveChanges();
             }
-            //Bestätigung einbauen
+
+            try {
+                //E-Mail verschicken
+                var senderEmail = new MailAddress("info@haro-stapler.de", "Kontakt");
+                var receiverEmail = new MailAddress("oliver.wagner@haro-stapler.de", "Receiver");
+                var password = "N_a-O@16Wwist?";
+                var sub = "Neue Kontaktanfrage";
+                var body = "Nachricht";
+                var smtp = new SmtpClient
+                {
+                    Host = "mail.use-media.com",
+                    Port = 465,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(senderEmail.Address, password)
+                };
+                using (var mess = new MailMessage(senderEmail, receiverEmail)
+                {
+                    Subject = sub,
+                    Body = body
+                })
+                {
+                    //smtp.Send(mess);
+                }
+            } catch (Exception e) {
+                var test = 0;
+            }
+            
 
             return RedirectToAction("Kontakt", new { bestaetigung = 1 });
         }

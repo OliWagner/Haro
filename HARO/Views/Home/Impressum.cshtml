@@ -21,7 +21,12 @@
                 Meisterbetrieb
             </td>
             <td colspan="2" rowspan="7">
-                <img src="~/Content/Images/impressum.jpg" width="100%">
+                
+                    @if (!Request.Browser.IsMobileDevice && Request.Browser.ScreenPixelsWidth > 600)
+                    {
+                    <text><img src="~/Content/Images/impressum.jpg" width="100%"></text>
+                    }
+                
             </td>
         </tr>
         <tr>

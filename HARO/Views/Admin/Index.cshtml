@@ -5,151 +5,151 @@
 }
 
 <h2>Administration <a href="/Admin/Kontakte/">Kontakte</a> <a href="/Admin/News/">News</a></h2>
-Geben Sie neue Geräte ein, ändern Sie Einträge oder löschen Sie diese.
-<form method="post" action="/Admin/AnzeigeEintragen">
-    @Html.HiddenFor(m => m.AkutesGeraet.id)
-   <table border="0" width="100%">
-       <tr>
-           <td width="70%">
-               <table border="0">
-                   <tr>
-                       <td width="200">
-                           Preis:
-                       </td>
-                       <td width="600">
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Preis, new { @class = "form-control" })
-                       </td>
-                   </tr>
-                   <tr>
-                       <td width="200">
-                           Hersteller:
-                       </td>
-                       <td width="600">
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Hersteller, new { @class = "form-control" })
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
-                           Bezeichnung:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Bezeichnung, new { @class = "form-control" })
-                       </td>
-                   </tr>
+@*Geben Sie neue Geräte ein, ändern Sie Einträge oder löschen Sie diese.
+    <form method="post" action="/Admin/AnzeigeEintragen">
+        @Html.HiddenFor(m => m.AkutesGeraet.id)
+       <table border="0" width="100%">
+           <tr>
+               <td width="70%">
+                   @*<table border="0">
+                       <tr>
+                           <td width="200">
+                               Preis:
+                           </td>
+                           <td width="600">
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Preis, new { @class = "form-control" })
+                           </td>
+                       </tr>
+                       <tr>
+                           <td width="200">
+                               Hersteller:
+                           </td>
+                           <td width="600">
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Hersteller, new { @class = "form-control" })
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               Bezeichnung:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Bezeichnung, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Antrieb:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Antrieb, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Antrieb:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Antrieb, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Baujahr:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Baujahr, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Baujahr:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Baujahr, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Betriebsstd.:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Betriebsstunden, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Betriebsstd.:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Betriebsstunden, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Bauhöhe:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Bauhoehe, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Bauhöhe:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Bauhoehe, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Tragkraft:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Tragkraft, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Tragkraft:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Tragkraft, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Leergewicht:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Leergewicht, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Leergewicht:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Leergewicht, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Mast:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.Mast, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Mast:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.Mast, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           Anzahl Ventile:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.AnzahlVentile, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               Anzahl Ventile:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.AnzahlVentile, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td>
-                           max. Hubhöhe:
-                       </td>
-                       <td>
-                           @Html.TextBoxFor(m => m.AkutesGeraet.MaxHubhoehe, new { @class = "form-control" })
-                       </td>
-                   </tr>
-                  
-                   <tr>
-                       <td>
-                           Besonderheiten:
-                       </td>
-                       <td>
-                           @Html.TextAreaFor(m => m.AkutesGeraet.Besonderheiten, new { @class = "form-control" })
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
-                           Beschreibung:
-                       </td>
-                       <td>
-                           @Html.TextAreaFor(m => m.AkutesGeraet.Beschreibung, new { @class = "form-control" })
-                       </td>
-                   </tr>
+                       <tr>
+                           <td>
+                               max. Hubhöhe:
+                           </td>
+                           <td>
+                               @Html.TextBoxFor(m => m.AkutesGeraet.MaxHubhoehe, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-                   <tr>
-                       <td colspan="2"><input type="submit" /></td>
-                   </tr>
-               </table>
-           </td>
-           <td width="30%" valign="top">
-               @{
-                   foreach (Gebrauchte item in Model.AlleAnzeigen)
-                   {
-               <p><a href="/Admin/Index/?id=@item.id">@item.Bezeichnung</a> &nbsp;&nbsp;&nbsp;<a href="/Admin/UploadFile/?id=@item.id">Bild hochladen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/DeleteAnzeige/?id=@item.id">Anzeige löschen!</a></p>
-                   }
-                }
-           </td>
-       </tr>
-   </table>
-    
+                       <tr>
+                           <td>
+                               Besonderheiten:
+                           </td>
+                           <td>
+                               @Html.TextAreaFor(m => m.AkutesGeraet.Besonderheiten, new { @class = "form-control" })
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               Beschreibung:
+                           </td>
+                           <td>
+                               @Html.TextAreaFor(m => m.AkutesGeraet.Beschreibung, new { @class = "form-control" })
+                           </td>
+                       </tr>
 
-</form>
+                       <tr>
+                           <td colspan="2"><input type="submit" /></td>
+                       </tr>
+                   </table>
+               </td>
+               <td width="30%" valign="top">
+                   @{
+                       foreach (Gebrauchte item in Model.AlleAnzeigen)
+                       {
+                   <p><a href="/Admin/Index/?id=@item.id">@item.Bezeichnung</a> &nbsp;&nbsp;&nbsp;<a href="/Admin/UploadFile/?id=@item.id">Bild hochladen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/DeleteAnzeige/?id=@item.id">Anzeige löschen!</a></p>
+                       }
+                    }
+               </td>
+           </tr>
+       </table>
+
+
+    </form>*@
